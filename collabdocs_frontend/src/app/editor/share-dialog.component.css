@@ -1,0 +1,23 @@
+.share-modal-backdrop {
+  position: fixed;
+  top:0; left:0; width:100vw; height:100vh;
+  background: #0005;
+  z-index: 10;
+}
+.share-modal {
+  position: fixed;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  min-width: 300px;
+  min-height: 220px;
+  box-shadow: 0 2px 18px #1112;
+  z-index: 11;
+}
+.share-modal h3 { margin-top:0; margin-bottom:1rem; }
+.share-modal input { width: 66%; padding: 0.35rem; margin-right: 0.5rem; }
+.share-modal button { margin-top: 0.7rem; margin-right: 0.7rem; }
+.share-modal ul { margin: 1rem 0 0 0; padding: 0 0 0 1rem;}
+.share-modal li { margin-bottom: 0.35rem; }

@@ -1,12 +1,16 @@
 <div class="dashboard-container">
   <h2>Your Documents</h2>
   <button class="primary" routerLink="/editor/new">New Document</button>
-  <!-- Placeholder for docs list -->
-  <div class="docs-list">
-    <div class="doc-card">
-      <h3>Sample Document</h3>
-      <p>This is a placeholder. Actual docs will be listed here.</p>
-      <button routerLink="/editor/1">Edit</button>
+  <div *ngIf="loading">Loading...</div>
+  <div class="docs-list" *ngIf="!loading">
+    <div class="doc-card" *ngFor="let doc of docs">
+      <h3>{{ doc.title }}</h3>
+      <div>
+        <button (click)="goTo(doc)">Edit</button>
+      </div>
+    </div>
+    <div *ngIf="docs.length === 0">
+      <p>No documents yet. Click 'New Document' to create one.</p>
     </div>
   </div>
 </div>

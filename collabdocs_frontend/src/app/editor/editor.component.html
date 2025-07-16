@@ -7,11 +7,16 @@
     </div>
     <div>
       <label>Content</label>
-      <textarea [(ngModel)]="content" name="content" rows="10"></textarea>
+      <quill-editor [(ngModel)]="content" name="content" [style]="{height: '260px'}"></quill-editor>
     </div>
     <div class="editor-actions">
       <button type="submit" class="save">Save</button>
       <button type="button" *ngIf="docId && docId !== 'new'" (click)="deleteDoc()" class="delete">Delete</button>
+      <button type="button" (click)="openShareDialog()" [disabled]="isNew" class="share">Share</button>
     </div>
   </form>
+  <app-share-dialog *ngIf="showShare"
+    [sharedWith]="sharedWith"
+    (sharedWithChange)="onSharedWithChange($event)"
+    (closed)="onShareClosed()"></app-share-dialog>
 </div>
