@@ -1,0 +1,25 @@
+<div class="auth-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div>
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+      <div *ngIf="registerForm.controls['email']?.invalid && registerForm.controls['email']?.touched" class="error">
+        Enter a valid email.
+      </div>
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password" />
+      <div *ngIf="registerForm.controls['password']?.invalid && registerForm.controls['password']?.touched" class="error">
+        Password must be at least 6 characters.
+      </div>
+    </div>
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <button type="submit" [disabled]="loading || registerForm.invalid">Register</button>
+    <p>
+      Already have an account?
+      <a routerLink="/login">Log In</a>
+    </p>
+  </form>
+</div>
