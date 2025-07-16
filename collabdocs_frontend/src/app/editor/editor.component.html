@@ -1,0 +1,17 @@
+<div class="editor-container">
+  <h2>{{ docId === 'new' || !docId ? 'New Document' : 'Edit Document' }}</h2>
+  <form (ngSubmit)="saveDoc()">
+    <div>
+      <label>Title</label>
+      <input [(ngModel)]="title" name="title" required />
+    </div>
+    <div>
+      <label>Content</label>
+      <textarea [(ngModel)]="content" name="content" rows="10"></textarea>
+    </div>
+    <div class="editor-actions">
+      <button type="submit" class="save">Save</button>
+      <button type="button" *ngIf="docId && docId !== 'new'" (click)="deleteDoc()" class="delete">Delete</button>
+    </div>
+  </form>
+</div>

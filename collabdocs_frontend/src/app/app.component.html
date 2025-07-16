@@ -1,0 +1,13 @@
+<nav class="top-nav">
+  <span class="brand">CollabDocs</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn$ | async; else loggedOut">
+    <span class="user-email">{{ authService.getEmail() }}</span>
+    <button class="nav-btn" (click)="logout()">Logout</button>
+  </ng-container>
+  <ng-template #loggedOut>
+    <a class="nav-btn" routerLink="/login">Login</a>
+    <a class="nav-btn" routerLink="/register">Register</a>
+  </ng-template>
+</nav>
+<router-outlet />

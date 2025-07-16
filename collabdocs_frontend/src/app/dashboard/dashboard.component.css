@@ -1,0 +1,40 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgb(0 0 0/7%);
+}
+.dashboard-container h2 {
+  margin-bottom: 1.1rem;
+}
+.dashboard-container .primary {
+  background: #1976d2;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+}
+.docs-list {
+  margin-top: 2rem;
+}
+.doc-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  background: #fafbfc;
+}
+.doc-card button {
+  margin-top: 0.8rem;
+  background: #424242;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
